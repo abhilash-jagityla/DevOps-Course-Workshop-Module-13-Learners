@@ -4,7 +4,7 @@ on:
 
 jobs:
   my-job:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest 
     env:
         # REPLACE THIS
         DOCKERHUB_USERNAME: abhilashjagityla1
@@ -24,6 +24,6 @@ jobs:
       - name: Docker login
         run: echo $DOCKERHUB_TOKEN | docker login -u $DOCKERHUB_USERNAME --password-stdin
       - name: Push image
-        run: docker push ${DOCKERHUB_USERNAME}/m13-order-processing-app
+        run: docker push ${DOCKERHUB_USERNAME}/m13-order-processing-app 
       - name: Trigger deployment
         run: curl --fail-with-body -X POST "$AZURE_WEBHOOK"
