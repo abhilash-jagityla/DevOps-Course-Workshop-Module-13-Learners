@@ -33,6 +33,8 @@ def process_orders(app):
             app.config["FINANCE_PACKAGE_URL"] + "/ProcessPayment",
             json=payload
         )
+        # Log the response for debugging
+        app.logger.info("Response from finance package: " + response.text)
 
         response.raise_for_status()
 
